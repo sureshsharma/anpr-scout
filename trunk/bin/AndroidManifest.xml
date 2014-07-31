@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.birdorg.anpr.sdk.simple.camera.example"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="ANPR SDK Example" >
+        <activity
+            android:name=".AnprSdkExample"
+            android:label="ANPR SDK Example" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <service android:name=".AnprSdkExampleCheckingService">
+   			<intent-filter>
+   			    <action android:name="com.birdorg.anpr.sdk.simple.camera.example.AnprSdkExampleCheckingService"/>
+   			</intent-filter>            
+        </service>
+        
+        
+        
+    </application>
+
+</manifest>

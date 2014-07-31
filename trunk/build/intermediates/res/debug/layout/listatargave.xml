@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+        <Button
+            android:id="@+id/searchButton"
+            android:background="@drawable/custom2"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right" />
+
+        <EditText
+            android:id="@+id/searchText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:layout_above="@+id/bottom_layover"
+        android:layout_gravity="center_horizontal"
+        android:scrollbars="none"
+        android:layout_below="@+id/linearLayout" />
+
+</RelativeLayout><!-- From: file:/C:/Users/gh/Desktop/ALPRScout%20-FinalDemo_33/res/layout/listatargave.xml -->

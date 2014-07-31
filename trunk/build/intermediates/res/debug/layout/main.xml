@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.Program2.Info"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textView4"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.17" />
+
+        <TextView android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/textView1" android:text="Kodi Identifikues"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="47dp"
+            android:layout_below="@+id/textView4"
+            android:layout_toRightOf="@+id/textView4"
+            android:layout_marginLeft="47dp"></TextView>
+        <EditText android:layout_width="429dp"
+            android:layout_height="wrap_content" android:id="@+id/editText1"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignTop="@+id/textView1"
+            android:layout_toRightOf="@+id/textView1"
+            android:layout_marginLeft="45dp">
+            <requestFocus></requestFocus>
+        </EditText>
+        <TextView android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Fjalekalimi" android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignTop="@+id/editText2"
+            android:layout_alignLeft="@+id/textView1"></TextView>
+        <EditText android:layout_width="429dp"
+            android:layout_height="wrap_content" android:id="@+id/editText2"
+            android:inputType="textPassword"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="31dp"
+            android:layout_below="@+id/editText1"
+            android:layout_alignLeft="@+id/editText1"></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView3"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:text="Hyni"
+            style="@style/ButtonText"
+            android:id="@+id/button1"
+            android:background="@drawable/blue_btn"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/editText2"
+            android:layout_alignRight="@+id/editText2"
+            android:layout_alignLeft="@+id/editText2"></Button>
+    </RelativeLayout>
+
+<!-- From: file:/C:/Users/gh/Desktop/ALPRScout%20-FinalDemo_33/res/layout/main.xml -->

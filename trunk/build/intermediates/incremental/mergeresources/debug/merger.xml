@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res" >
+            <file
+                name="audio"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\audio.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="background2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\background2.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="background3"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\background3.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="blue"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\blue.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="blue_btn"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\blue_btn.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="cam"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\cam.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="camera"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\camera.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="car1"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\car1.jpg"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="car2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\car2.jpg"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="car3"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\car3.jpg"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="car4"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\car4.jpg"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="car5"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\car5.jpg"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="car6"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\car6.jpg"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="check"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\check.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="clock"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\clock.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="controls"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\controls.txt"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom10"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom10.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom11"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom11.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom12"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom12.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom13"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom13.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom14"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom14.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom15"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom15.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom16"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom16.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom17"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom17.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom18"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom18.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom2.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom3"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom3.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom4"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom4.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom5"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom5.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom6"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom6.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom7"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom7.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom8"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom8.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="custom9"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\custom9.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ford"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\ford.jpg"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="green"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\green.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="green_btn"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\green_btn.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="icon"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\icon.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="images"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\images.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="konf"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\konf.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ksot"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\ksot.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotj"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\ksotj.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotk"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\ksotk.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="link"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\link.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="lista"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\lista.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="lista2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\lista2.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="lista3"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\lista3.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="listm"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\listm.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="penalizo2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\penalizo2.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="penalizo3"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\penalizo3.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="policia"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\policia.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="policia2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\policia2.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="policia3"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\policia3.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="printo"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\printo.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="radiosearch"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\radiosearch.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="red_btn"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\red_btn.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="search"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\search.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="search2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\search2.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="security"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\security.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="set"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\set.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="settings"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\settings.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="settings2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\settings2.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="sql"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\sql.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="start"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\start.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="status1"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\status1.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="status2"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\status2.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="white"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\white.jpg"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="write"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-hdpi\write.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="cam"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-mdpi\cam.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="icon"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-mdpi\icon.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ksot"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-mdpi\ksot.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotj"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-mdpi\ksotj.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotk"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-mdpi\ksotk.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="listm"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-mdpi\listm.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="set"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-mdpi\set.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="write"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-mdpi\write.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="cam"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xhdpi\cam.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksot"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xhdpi\ksot.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotj"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xhdpi\ksotj.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotk"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xhdpi\ksotk.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="listm"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xhdpi\listm.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="set"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xhdpi\set.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="write"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xhdpi\write.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="cam"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxhdpi\cam.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksot"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxhdpi\ksot.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotj"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxhdpi\ksotj.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotk"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxhdpi\ksotk.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="listm"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxhdpi\listm.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="set"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxhdpi\set.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="write"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxhdpi\write.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="cam"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxxhdpi\cam.png"
+                qualifiers="xxxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksot"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxxhdpi\ksot.png"
+                qualifiers="xxxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotj"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxxhdpi\ksotj.png"
+                qualifiers="xxxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ksotk"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxxhdpi\ksotk.png"
+                qualifiers="xxxhdpi-v4"
+                type="drawable" />
+            <file
+                name="listm"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxxhdpi\listm.png"
+                qualifiers="xxxhdpi-v4"
+                type="drawable" />
+            <file
+                name="set"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxxhdpi\set.png"
+                qualifiers="xxxhdpi-v4"
+                type="drawable" />
+            <file
+                name="write"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\drawable-xxxhdpi\write.png"
+                qualifiers="xxxhdpi-v4"
+                type="drawable" />
+            <file
+                name="activityinfo"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\activityinfo.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_penalize"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\activity_penalize.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_print"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\activity_print.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_selecting_item"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\activity_selecting_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="anpr"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\anpr.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="anprinfo"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\anprinfo.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="ftp"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\ftp.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="konfigurimet"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\konfigurimet.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="kontrolletsotme"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\kontrolletsotme.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="listatargave"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\listatargave.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_menu"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\list_menu.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="plates"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\plates.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="plates_search"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\layout\plates_search.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="alert"
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\raw\alert.wav"
+                qualifiers=""
+                type="raw" />
+            <file
+                path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\res\values\strings.xml"
+                qualifiers="" >
+                <string name="hello" >Hello World, NorvegANPRTestActivity!
+                </string>
+                <string name="hello_world" >Hello world!
+                </string>
+
+                <string-array name="masa_plotesuese" >
+                    <item>
+Komision - Heqje Patente
+                    </item>
+                    <item>
+Komision - Bllokim Mjeti
+                    </item>
+                </string-array>
+                <string-array name="plate_arrays" >
+                    <item>
+AA 367 AM
+                    </item>
+                    <item>
+AA 367 AL
+                    </item>
+                    <item>
+AA 367 AK
+                    </item>
+                </string-array>
+                <string-array name="penalize_1000" >
+                    <item>
+Kodi Rrugor Neni 15 - Parkim i Gabuar
+                    </item>
+                    <item>
+Kodi Rrugor Neni 20 - Parkim ne Trotuar
+                    </item>
+                </string-array>
+
+                <string name="action_settings" >Konfigurimet
+                </string>
+                <string name="penalize_1000" >Perzgjidh Tipin e Penalizimit
+                </string>
+                <string name="app_name" >Norveg ANPR Test
+                </string>
+                <string name="title_activity_konfigurimet" >Konfigurimet
+                </string>
+                <string name="title_activity_penalize" >Penalizo
+                </string>
+                <string name="title_activity_selecting_item" >SelectingItem
+                </string>
+
+                <style name="ButtonText" >
+                    <item name="android:layout_width">
+fill_parent
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:textColor">
+#ffffff
+                    </item>
+                    <item name="android:gravity">
+center
+                    </item>
+                    <item name="android:layout_margin">
+3dp
+                    </item>
+                    <item name="android:textSize">
+30dp
+                    </item>
+                    <item name="android:textStyle">
+bold
+                    </item>
+                    <item name="android:shadowColor">
+#000000
+                    </item>
+                    <item name="android:shadowDx">
+1
+                    </item>
+                    <item name="android:shadowDy">
+1
+                    </item>
+                    <item name="android:shadowRadius">
+2
+                    </item>
+                </style>
+
+                <string name="masa_plotesuese" >Perzgjidh Tipin e Penalizimit
+                </string>
+
+                <string-array name="penalize_500" >
+                    <item>
+Kodi Rrugor Neni 200 - Tejkalimi i Shpejtesise
+                    </item>
+                </string-array>
+
+                <string name="plate_prompt" >Perzgjidh nje targe
+                </string>
+                <string name="penalize_500" >Perzgjidh Tipin e Penalizimit
+                </string>
+                <string name="title_activity_print" >Print
+                </string>
+                <string name="title_activity_info" >Info
+                </string>
+            </file>
+        </source>
+        <source path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\build\generated\res\rs\debug" />
+        <source path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\build\generated\res\generated\debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\build-types\debug\res" />
+    </dataSet>
+
+</merger>
