@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.Program2.penalize"
+    >
+    <TextView
+        android:text="The third Intent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom8"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/intent3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="23dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1000 Lek"
+        android:textSize="25sp"
+        android:id="@+id/checkBox1"
+        android:checked="false"
+        android:layout_below="@+id/intent5"
+        android:layout_alignLeft="@+id/button" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner1"
+        android:entries="@array/penalize_1000"
+        android:prompt="@string/penalize_1000"
+        android:layout_below="@+id/checkBox1"
+        android:layout_alignLeft="@+id/intent5"
+        android:layout_alignParentRight="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner2"
+        android:entries="@array/penalize_500"
+        android:prompt="@string/penalize_500"
+        android:layout_alignLeft="@+id/checkBox"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentRight="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500 Lek"
+        android:textSize="25sp"
+        android:id="@+id/checkBox"
+        android:checked="false"
+        android:layout_below="@+id/spinner1"
+        android:layout_alignLeft="@+id/spinner1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Printo"
+        style="@style/ButtonText"
+        android:id="@+id/button"
+        android:background="@drawable/blue_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/spinner2"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/intent4"
+        android:layout_below="@+id/intent3"
+        android:layout_alignLeft="@+id/intent3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="32sp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/intent5"
+        android:layout_below="@+id/intent4"
+        android:layout_alignLeft="@+id/intent4" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masa Plotesuese"
+        android:textSize="25sp"
+        android:id="@+id/checkBox3"
+        android:checked="false"
+        android:layout_below="@+id/spinner2"
+        android:layout_alignLeft="@+id/spinner2" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner3"
+        android:entries="@array/masa_plotesuese"
+        android:prompt="@string/masa_plotesuese"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignLeft="@+id/checkBox3"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
+<!-- From: file:/C:/Users/gh/Desktop/ALPRScout%20-FinalDemo_33/res/layout/activity_penalize.xml -->

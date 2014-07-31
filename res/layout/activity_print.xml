@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="1"
+    android:background="@drawable/white">
+
+    <TableRow>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom6"
+            android:id="@+id/imageView"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_column="1"
+            android:textColor="#000000"
+            android:text="PROCES VERBALI I KONSTATIMIT TE SHKELJES"
+            android:padding="3dip"
+            />
+    </TableRow>
+    <View
+        android:layout_height="2dip"
+        android:background="#000000"/>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="ID Punonjesit:"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_punonjesi"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="Data Aktuale:"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_date"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+
+    </TableRow>
+    <TableRow>
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="GPS:"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="121e1241412141212233"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="ID e Pajisjes:"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_id"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <View
+        android:layout_height="2dip"
+        android:background="#000000"/>
+
+    <TableRow>
+            <TextView
+                android:text="DATA/VENDI"
+                android:textColor="#000000"
+                android:padding="3dip"/>
+            <TextView
+                android:text="Data: 20/07/2014"
+                android:textColor="#000000"
+                android:padding="3dip"
+            />
+            <TextView
+                android:text="Ora: 12:00 AM"
+                android:textColor="#000000"
+                android:padding="3dip"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="Rruga: Rr. Elbasanit"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="Vendi: Sauk"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <View
+        android:layout_height="2dip"
+        android:background="#000000"/>
+    <TableRow>
+        <TextView
+            android:text="SHKELESI"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="Emer/Mbiemer: Erjon Telharaj"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="Kateg: B"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="Adresa: Tirane"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:text="Nr. 215040"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <View
+        android:layout_height="2dip"
+        android:background="#000000"/>
+    <TableRow>
+        <TextView
+            android:text="MJETI"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_tipi"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_targa"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <View
+        android:layout_height="2dip"
+        android:background="#000000"/>
+    <TableRow>
+        <TextView
+            android:text="SHKELJA"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_shkelja"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_shkelja2"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <View
+        android:layout_height="2dip"
+        android:background="#000000"/>
+    <TableRow>
+        <TextView
+            android:text="SANKSIONI"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_gjoba"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_gjoba2"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text=""
+            android:textColor="#000000"
+            android:padding="3dip"/>
+        <TextView
+            android:id="@+id/txt_shkelja3"
+            android:textColor="#000000"
+            android:padding="3dip"/>
+    </TableRow>
+    <View
+        android:layout_height="2dip"
+        android:background="#000000"/>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+    </TableRow>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:text="Kthehu"
+        style="@style/ButtonText"
+        android:id="@+id/button"
+        android:background="@drawable/blue_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/spinner2"
+        android:layout_alignParentRight="true"
+        android:layout_column="1" />
+
+</TableLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, NorvegANPRTestActivity!</string>
+    <string name="app_name">Norveg ANPR Test</string>
+    <string name="title_activity_info">Info</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Konfigurimet</string>
+    <string name="plate_prompt">Perzgjidh nje targe</string>
+
+    <string-array name="plate_arrays">
+        <item>AA 367 AM</item>
+        <item>AA 367 AL</item>
+        <item>AA 367 AK</item>
+    </string-array>
+
+    <string name="penalize_1000">Perzgjidh Tipin e Penalizimit</string>
+
+    <string-array name="penalize_1000">
+        <item>Kodi Rrugor Neni 15 - Parkim i Gabuar</item>
+        <item>Kodi Rrugor Neni 20 - Parkim ne Trotuar</item>
+    </string-array>
+
+    <string name="penalize_500">Perzgjidh Tipin e Penalizimit</string>
+
+    <string-array name="penalize_500">
+        <item>Kodi Rrugor Neni 200 - Tejkalimi i Shpejtesise</item>
+    </string-array>
+    <string name="masa_plotesuese">Perzgjidh Tipin e Penalizimit</string>
+
+    <string-array name="masa_plotesuese">
+        <item>Komision - Heqje Patente</item>
+        <item>Komision - Bllokim Mjeti</item>
+    </string-array>
+
+
+    <string name="title_activity_penalize">Penalizo</string>
+    <string name="title_activity_selecting_item">SelectingItem</string>
+    <string name="title_activity_print">Print</string>
+    <string name="title_activity_konfigurimet">Konfigurimet</string>
+    <style name="ButtonText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+</resources>

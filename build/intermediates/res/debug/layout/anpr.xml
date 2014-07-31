@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <TextView
+        android:id="@+id/Text_Main_Result_ALPR"
+        android:textSize="12pt"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="15"
+        android:text=" " />
+
+
+
+    <ImageView
+        android:id="@+id/Bitmap_Main_Photo_ALPR"
+        android:scaleType="fitXY"
+        android:layout_height="0dip"
+        android:layout_weight="70"
+        android:layout_width="wrap_content"/>
+
+
+
+
+
+
+</LinearLayout><!-- From: file:/C:/Users/gh/Desktop/ALPRScout%20-FinalDemo_33/res/layout/anpr.xml -->

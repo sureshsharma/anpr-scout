@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.birdorg.anpr.sdk.simple.camera.example"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <permission
+        android:name="com.example.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="Policia ALPR Scout" >
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.AnprSdkMain"
+            android:label="ANPR SDK Login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.AnprSdkMenu"
+            android:label="ANPR SDK Menu" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.ANPR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.Kontrollo"
+            android:label="ANPR SDK Kontrollo" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.ANPR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.Info"
+            android:label="ANPR SDK Info" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.INFO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.ANPRInfo"
+            android:label="ANPR SDK Info" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.ACTIVITYINFO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.Lista"
+            android:label="ANPR SDK Lista" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.LISTATARGAVE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.Penalizo"
+            android:label="ANPR SDK Lista" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.ACTIVITY_PENALIZE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.Konfigurimet"
+            android:label="ANPR SDK Konfigurimet" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.KONFIGURIMET" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.KontrolletSotme"
+            android:label="ANPR SDK Kontrollet e Sotme" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.LIST_MENU" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.PenalizimetSotme"
+            android:label="ANPR SDK Penalizimet" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.LISTATARGAVE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.FtpUpload"
+            android:label="ANPR SDK FTP" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.FTP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdorg.anpr.sdk.simple.camera.example.Printo"
+            android:label="ANPR SDK Printo" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.ACTIVITY_PRINT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.birdorg.anpr.sdk.simple.camera.example.AnprSdkExampleCheckingService" >
+            <intent-filter>
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.AnprSdkExampleCheckingService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
