@@ -2,17 +2,23 @@ package com.birdorg.anpr.sdk.simple.camera.example;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -20,6 +26,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -30,13 +41,29 @@ import java.io.OutputStreamWriter;
 import java.text.DateFormat;
 import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Vector;
 
 import it.sauronsoftware.ftp4j.FTPClient;
 
 public class Kontrollo extends Activity
 {
+
+    // Progress Dialog
+    private ProgressDialog pDialog;
+
+    // JSON parser class
+    JSONParser jsonParser = new JSONParser();
+
+    private static final String POST_KONTROLLO_URL = "http://www.comport.first.al/anpr/kontrollo.php";
+
+    private static final String TAG_SUCCESS = "success";
+    private static final String TAG_MESSAGE = "message";
+
+    TextView txt_targa,txt_date, txt_id;
 
     /*********  work only for Dedicated IP ***********/
     static final String FTP_HOST= "comport.first.al";
@@ -48,18 +75,17 @@ public class Kontrollo extends Activity
     static final String FTP_PASS  ="MNXjqJET";
 
 
+    private String CAP_PATH="CAP_PATH";
+
     static int ANPR_REQUEST = 1;	// Identifier of our calling
 
     AnprSdkMenu mm = new AnprSdkMenu();
-    public String targa;
 
-    public final String targ ;
+    private static String targafin = "TARGA" ;
     Context context = this;
     public static  String pathsdk;
     String time;
-    public Kontrollo() {
-        this.targ = targa;
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -165,7 +191,8 @@ public class Kontrollo extends Activity
         // }
     }
 
-    public void createDir(){
+
+    public void uploadFile(File fileName, String name){
 
 
         FTPClient client = new FTPClient();
@@ -176,14 +203,24 @@ public class Kontrollo extends Activity
             client.login(FTP_USER, FTP_PASS);
             client.setType(FTPClient.TYPE_BINARY);
 
-            client.changeDirectory("/comport.first.al/anpr/uploads/");
+            //  client.changeDirectory("/mdoklea/");
 
 
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             //get current date time with Date()
             Date date = new Date();
-            client.createDirectory(dateFormat.format(date));
 
+            //  client.createDirectory(dateFormat.format(date));
+            Format formatter = new SimpleDateFormat("HH.mm.ss");
+            String time = formatter.format(new Date());
+
+            client.changeDirectory("/comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/");
+            client.createDirectory(time+name+"/");
+            String getf = fileName.getName();
+            CAP_PATH = "/comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/"+time+name+"/"+getf;
+            client.changeDirectory("/comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/"+time+name+"/");
+
+            client.upload(fileName);
 
 
         } catch (Exception e) {
@@ -211,72 +248,23 @@ public class Kontrollo extends Activity
 
                     String s = b.getString("PlateNums");    // in bundle the error string
 
-                    createDir();
+                    //  String user = getIntent().getExtras().getString("Username");
 
-                    StoreFile st = new StoreFile();
-                    st.storeImage(time+"-"+s);
-
+                    //  Toast.makeText(context, "Username: "+user, Toast.LENGTH_LONG);
 
 
-                /*        File f = new File(s+".jpg");
+                    targafin = s;
+                    String name = pathsdk+s+".jpg";    // photo file on the SD card
+                    File fs = new File(name);
+                    uploadFile(fs, "-"+s);
 
 
+                    new PostComment().execute();
 
+                    Intent intent = new Intent(Kontrollo.this, Info.class);
+                    intent.putExtra("Targa", s);
+                    startActivity(intent);
 
-
-                        String ss = s.substring(2);
-                        ss = "AA" + ss;
-                        targa = ss;
-
-
-
-                        File dirr = new File(pathsdk);//"/sdcard/sdk/example/images/");
-
-                        File ff = new File(pathsdk+s+".jpg");
-
-                        File fs = new File("/sdcard/sdk/example/images/26-07-2014/YX171EK.jpg");//  "/sdcard/logo.png");
-
-                        Toast.makeText(getBaseContext(), "File: " + ff.getName(), Toast.LENGTH_SHORT).show();
-
-
-                        uploadFile(fs);
-
-                        String str = "FILE";
-                        if (dirr.isDirectory()) {
-                            str = "--->>DIR";
-                        }
-
-
-                        String tt = "TARGA IS NULL";
-                        int sz = 0;
-                        for (File imageFile : dirr.listFiles()) {
-
-                            //  array[i++] = imageFile.getName();
-                            uploadFile(imageFile);
-                            tt = imageFile.getName();
-                            sz++;
-                            Toast.makeText(getBaseContext(), "PIRA: " + tt, Toast.LENGTH_SHORT).show();
-
-                        }
-                        Toast.makeText(getBaseContext(), "SIZE: " +sz, Toast.LENGTH_SHORT).show();
-
-*/
-                        try {
-                            Intent intent = new Intent(Kontrollo.this, Info.class);
-
-
-                            intent.putExtra("Plate", s);
-                            intent.putExtra("Color", "");
-                            intent.putExtra("Type", "");
-                            startActivity(intent);
-                            Class ourClass = Class.forName("com.birdorg.anpr.sdk.simple.camera.example.Info");
-
-                        } catch (ClassNotFoundException e) {
-                            e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "exception on info", Toast.LENGTH_SHORT).show();
-
-
-                        }
 
                 }
 
@@ -287,7 +275,79 @@ public class Kontrollo extends Activity
             }
         }
     }
+    class PostComment extends AsyncTask<String, String, String> {
 
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(Kontrollo.this);
+            pDialog.setMessage("Posting Values...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... args) {
+            // TODO Auto-generated method stub
+            // Check for success tag
+            int success;
+            String targa = targafin;
+
+            String pajisje_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+            Calendar c = Calendar.getInstance();
+            System.out.println("Current time => "+c.getTime());
+
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String data = df.format(c.getTime());
+
+
+            String username = getIntent().getExtras().getString("Username");
+            String cap_img = CAP_PATH;
+            try {
+                // Building Parameters
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+                params.add(new BasicNameValuePair("targa", targa));
+                params.add(new BasicNameValuePair("data", data));
+                params.add(new BasicNameValuePair("pajisje_id", pajisje_id));
+                params.add(new BasicNameValuePair("user_id", username));
+                params.add(new BasicNameValuePair("capture_image", cap_img));
+
+                Log.d("request!", "starting");
+
+                //Posting user data to script
+                JSONObject json = jsonParser.makeHttpRequest(
+                        POST_KONTROLLO_URL, "POST", params);
+
+                // full json response
+                Log.d("Post Comment attempt", json.toString());
+
+                // json success element
+                success = json.getInt(TAG_SUCCESS);
+                if (success == 1) {
+                    Log.d("Values Added!", json.toString());
+                    finish();
+                    return json.getString(TAG_MESSAGE);
+                }else{
+                    Log.d("Insert Failure!", json.getString(TAG_MESSAGE));
+                    return json.getString(TAG_MESSAGE);
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+
+        }
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog once product deleted
+            pDialog.dismiss();
+            if (file_url != null){
+                Toast.makeText(Kontrollo.this, file_url, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 
 }
 

@@ -95,7 +95,7 @@
             android:name="com.birdorg.anpr.sdk.simple.camera.example.KontrolletSotme"
             android:label="ANPR SDK Kontrollet e Sotme" >
             <intent-filter>
-                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.LIST_MENU" />
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.KONTROLLETSOTME" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

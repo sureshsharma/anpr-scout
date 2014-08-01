@@ -1,123 +1,104 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.Program2.Info"
-    >
-
-    <TextView
-        android:text="The third Intent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/intent3"
-        android:textSize="32sp"
-        android:layout_marginLeft="38dp"
-        android:background="@drawable/custom8"
-        android:textColor="#000000"
-        android:layout_marginTop="22dp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="32sp"
-        android:id="@+id/intent4"
-        android:layout_marginTop="21dp"
-        android:layout_below="@+id/intent3"
-        android:layout_alignLeft="@+id/intent3" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="32sp"
-        android:id="@+id/intent5"
-        android:layout_below="@+id/intent4"
-        android:layout_alignLeft="@+id/intent4" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="32sp"
-        android:id="@+id/intent6"
-        android:layout_below="@+id/intent5"
-        android:layout_alignLeft="@+id/intent5" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="32sp"
-        android:id="@+id/intent7"
-        android:layout_below="@+id/intent6"
-        android:layout_alignLeft="@+id/intent6" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:textSize="32sp"
-        android:id="@+id/intent8"
-        android:layout_below="@+id/intent7"
-        android:layout_alignLeft="@+id/intent7" />
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:padding="5dp"
+    android:id="@+id/blah">
 
     <ImageView
+        android:id="@+id/logo"
+        android:layout_width="90px"
+        android:layout_height="90px"
+        android:layout_marginLeft="10px"
+        android:layout_marginTop="10px"
+
+        android:src="@drawable/ksot" >
+    </ImageView>
+
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:layout_alignTop="@+id/intent4"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="42dp" />
+        android:layout_height="match_parent"
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
-        android:layout_below="@+id/intent8"
-        android:layout_alignLeft="@+id/intent8"
-        android:layout_marginTop="26dp" />
+        >
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_weight="0.33"
-            android:id="@+id/button"
-            android:text="Penalizo"
-            style="@style/ButtonText"
-            android:background="@drawable/red_btn"
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
+            android:layout_marginLeft="10px"
+            android:layout_marginTop="30px"
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_weight="0.33"
-            android:id="@+id/button2"
-            android:text="Lista"
-            android:background="@drawable/blue_btn"
-            style="@style/ButtonText"
+            android:text="@+id/label"
+            android:textSize="30px" />
+
+        <TextView
+            android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_weight="0.33"
-            android:id="@+id/button3"
-            android:text="Kontrollo"
-            android:background="@drawable/green_btn"
-            style="@style/ButtonText"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
+            android:layout_marginLeft="5px"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Data: "
+            android:id="@+id/textView4" />
+
+
     </LinearLayout>
-</RelativeLayout>
-<!-- From: file:/C:/Users/gh/Desktop/ALPRScout%20-FinalDemo_33/res/layout/kontrolletsotme.xml -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="87dp"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="10px"
+
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Rregjistruar"
+            android:id="@+id/textView4" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="nga polici:"
+            android:id="@+id/textView4" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="(12345678)"
+            android:id="@+id/textView4" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="fill_parent"
+            android:layout_height="100px"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="10px"
+
+            android:src="@drawable/cap" >
+        </ImageView>
+    </LinearLayout>
+
+
+</LinearLayout><!-- From: file:/C:/Users/john/Desktop/anpr-scout/res/layout/kontrolletsotme.xml -->

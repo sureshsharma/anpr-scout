@@ -13,6 +13,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import it.sauronsoftware.ftp4j.FTPClient;
+
 public class AnprSdkMenu extends ListActivity {
 
     static final String[] MOBILE_OS =
@@ -20,6 +22,16 @@ public class AnprSdkMenu extends ListActivity {
 
     public static String SDK_PATH;
     public static String SDK_TEMP_PATH;
+
+
+    /*********  work only for Dedicated IP ***********/
+    static final String FTP_HOST= "comport.first.al";
+
+    /*********  FTP USERNAME ***********/
+    static final String FTP_USER = "androidfirst";
+
+    /*********  FTP PASSWORD ***********/
+    static final String FTP_PASS  ="MNXjqJET";
 
 
     @Override
@@ -53,6 +65,38 @@ public class AnprSdkMenu extends ListActivity {
             e.printStackTrace();
 
         }
+    }
+    public void createDir(){
+
+
+        FTPClient client = new FTPClient();
+
+        try {
+
+            client.connect(FTP_HOST,21);
+            client.login(FTP_USER, FTP_PASS);
+            client.setType(FTPClient.TYPE_BINARY);
+
+            client.changeDirectory("/comport.first.al/anpr/uploads/");
+
+
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            //get current date time with Date()
+            Date date = new Date();
+
+            client.createDirectory(dateFormat.format(date));
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                client.disconnect(true);
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+
     }
 
 }
