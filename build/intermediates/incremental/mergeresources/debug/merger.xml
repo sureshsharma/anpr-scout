@@ -610,9 +610,9 @@ Komision - Bllokim Mjeti
                 </string>
                 <string name="penalize_500" >Perzgjidh Tipin e Penalizimit
                 </string>
-                <string name="hello_world" >Hello world!
-                </string>
                 <string name="title_activity_penalize" >Penalizo
+                </string>
+                <string name="hello_world" >Hello world!
                 </string>
 
                 <string-array name="penalize_500" >
@@ -657,9 +657,9 @@ bold
                     </item>
                 </style>
 
-                <string name="masa_plotesuese" >Perzgjidh Tipin e Penalizimit
-                </string>
                 <string name="title_activity_konfigurimet" >Konfigurimet
+                </string>
+                <string name="masa_plotesuese" >Perzgjidh Tipin e Penalizimit
                 </string>
             </file>
             <file

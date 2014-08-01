@@ -302,7 +302,7 @@ public class Kontrollo extends Activity
             String data = df.format(c.getTime());
 
 
-            String username = getIntent().getExtras().getString("Username");
+            String username = "1234";//getIntent().getExtras().getString("Username");
             String cap_img = CAP_PATH;
             try {
                 // Building Parameters
