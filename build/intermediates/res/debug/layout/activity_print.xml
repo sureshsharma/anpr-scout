@@ -275,7 +275,7 @@
     </TableRow>
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="67dp"
         android:text="Kthehu"
         style="@style/ButtonText"
         android:id="@+id/button"
@@ -285,4 +285,4 @@
         android:layout_alignParentRight="true"
         android:layout_column="1" />
 
-</TableLayout><!-- From: file:/C:/Users/gh/Desktop/ALPRScout%20-FinalDemo_33/res/layout/activity_print.xml -->
+</TableLayout><!-- From: file:/C:/Users/john/Desktop/anpr-scout/res/layout/activity_print.xml -->

@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\assets" />
+        <source path="C:\Users\john\Desktop\anpr-scout\assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="C:\Users\gh\Desktop\ALPRScout -FinalDemo_33\build-types\debug\assets" />
+        <source path="C:\Users\john\Desktop\anpr-scout\build-types\debug\assets" />
     </dataSet>
 
 </merger>

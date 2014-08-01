@@ -18,7 +18,7 @@ public class KontrollArrayAdapter extends ArrayAdapter<String> {
 
     Vector<String> vec = new Vector<String>();
     public KontrollArrayAdapter(Context context, Vector<String> vec) {
-        super(context, R.layout.list_menu, vec);
+        super(context, R.layout.kontrolletsotme, vec);
         this.context = context;
         this.vec = vec;
     }
@@ -28,15 +28,15 @@ public class KontrollArrayAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(R.layout.list_menu, parent, false);
+        View rowView = inflater.inflate(R.layout.kontrolletsotme, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.label);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
 
         textView.setText(vec.get(position));
         // Change icon based on name
-       String s = vec.get(position);
+        String s = vec.get(position);
 
-       String ss = s.substring(2,3);
+        String ss = s.substring(2,3);
         int some = Integer.parseInt(ss);
         if(some == 1 || some == 3 || some == 6)
         {
