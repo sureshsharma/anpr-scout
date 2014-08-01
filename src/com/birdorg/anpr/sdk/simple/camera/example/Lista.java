@@ -40,6 +40,7 @@ public class Lista extends ListActivity {
     EditText inputSearch;
 
     private JSONArray mPlates = null;
+
     // manages all of our comments in a list.
     private ArrayList<HashMap<String, String>> mPlatesList;
 
