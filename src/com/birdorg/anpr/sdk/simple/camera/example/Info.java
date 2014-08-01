@@ -91,6 +91,7 @@ public class Info extends Activity {
         {
             public void onClick(View arg0) {
                 Intent intent = new Intent(Info.this,Lista.class);
+                intent.putExtra("Username", getIntent().getExtras().getString("Username"));
                 startActivity(intent);
 
             }
@@ -99,8 +100,8 @@ public class Info extends Activity {
         {
             public void onClick(View arg0) {
                 Intent intent = new Intent(Info.this,Kontrollo.class);
+                intent.putExtra("Username", getIntent().getExtras().getString("Username"));
                 startActivity(intent);
-
             }
         });
     }
