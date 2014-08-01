@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/anpr-scout.iml" filepath="$PROJECT_DIR$/anpr-scout.iml" />
-      <module fileurl="file://$PROJECT_DIR$/anpr-scout.iml" filepath="$PROJECT_DIR$/anpr-scout.iml" />
       <module fileurl="file://$PROJECT_DIR$/ftp4j-1.7.2/ftp4j-1.7.2.iml" filepath="$PROJECT_DIR$/ftp4j-1.7.2/ftp4j-1.7.2.iml" />
     </modules>
   </component>
