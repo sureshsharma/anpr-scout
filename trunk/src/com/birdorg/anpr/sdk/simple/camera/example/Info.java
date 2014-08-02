@@ -70,6 +70,13 @@ public class Info extends Activity {
         tv7.setText("Siguracion: "+getIntent().getExtras().getString("Siguracion"));
         tv8.setText("Sgs: "+getIntent().getExtras().getString("Sgs"));
         tv9.setText("Pronar: "+getIntent().getExtras().getString("Pronar"));
+
+        if(getIntent().getExtras().getString("Gjoba").equals("jo")) {
+            imageView3.setImageResource(R.drawable.status2);
+        }else if(getIntent().getExtras().getString("Gjoba").equals("po"))
+        {
+            imageView3.setImageResource(R.drawable.status1);
+        }
         btnValidate.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View arg0) {
