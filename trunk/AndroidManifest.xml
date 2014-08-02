@@ -91,7 +91,7 @@
             android:name=".PenalizimetSotme"
             android:label="ANPR SDK Penalizimet" >
             <intent-filter>
-                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.LISTATARGAVE" />
+                <action android:name="com.birdorg.anpr.sdk.simple.camera.example.PENALIZIMET_SOTME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -129,5 +129,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
 </manifest>
