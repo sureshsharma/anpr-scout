@@ -217,7 +217,7 @@ public class Kontrollo extends Activity
             client.changeDirectory("/comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/");
             client.createDirectory(time+name+"/");
             String getf = fileName.getName();
-            CAP_PATH = "/comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/"+time+name+"/"+getf;
+            CAP_PATH = "http://www.comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/"+time+name+"/"+getf;
             client.changeDirectory("/comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/"+time+name+"/");
 
             client.upload(fileName);
@@ -302,7 +302,7 @@ public class Kontrollo extends Activity
             String data = df.format(c.getTime());
 
 
-            String username = "1234";//getIntent().getExtras().getString("Username");
+            String username = getIntent().getExtras().getString("Username");
             String cap_img = CAP_PATH;
             try {
                 // Building Parameters
@@ -311,7 +311,7 @@ public class Kontrollo extends Activity
                 params.add(new BasicNameValuePair("data", data));
                 params.add(new BasicNameValuePair("pajisje_id", pajisje_id));
                 params.add(new BasicNameValuePair("user_id", username));
-                params.add(new BasicNameValuePair("capture_image", cap_img));
+                params.add(new BasicNameValuePair("capture_image", CAP_PATH));
 
                 Log.d("request!", "starting");
 
