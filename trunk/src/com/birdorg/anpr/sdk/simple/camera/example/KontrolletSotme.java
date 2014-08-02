@@ -3,124 +3,189 @@ package com.birdorg.anpr.sdk.simple.camera.example;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Vector;
+
+import static com.birdorg.anpr.sdk.simple.camera.example.R.drawable.cam;
+import static com.birdorg.anpr.sdk.simple.camera.example.R.drawable.cap;
 
 /**
  * Created by john on 7/22/2014.
  */
 public class KontrolletSotme extends ListActivity{
+    private ProgressDialog pDialog;
+    private static final String TARGA_KONTROLLET_SOTME_URL = "http://www.comport.first.al/anpr/kontrollet_sotme.php";
+
+
+    private static final String TAG_DATA = "data";
+    private static final String TAG_PAJISJE_ID= "pajisje_id";
+    private static final String TAG_USER_ID= "user_id";
+    private static final String TAG_CAPTURE_ID= "capture_image";
+
+    private static final String TAG_TARGA= "targa";
+    private static final String TAG_POSTS = "posts";
+
+
+    private JSONArray mPlates = null;
+
+    // manages all of our comments in a list.
+    private ArrayList<HashMap<String, String>> mPlatesList;
+
+    ItemKontrollo item;
+    private Vector<ItemKontrollo> VECITEM = new Vector<ItemKontrollo>();
+
+
+    ImageView imageView ;
 
 
     Vector<String> vec = new Vector<String>();
     Vector<String> vecc= new Vector<String>();
 
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.listatargave);
-
-
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        //get current date time with Date()
-        Date date = new Date();
-        String pathsdk =  "/sdcard/sdk/example/images/"+dateFormat.format(date)+"/";
-
-        File dirr = new File(pathsdk);//"/sdcard/sdk/example/images/");
-
-        String str = "FILE";
-        if (dirr.isDirectory()) {
-            str = "--->>DIR";
-
-
-            String tt = "TARGA IS NULL";
-            int sz = 0;
-
-            for (File imageFile : dirr.listFiles()) {
-
-                if(!(imageFile.isDirectory()) && (imageFile != null)){
-                    Toast.makeText(getBaseContext(), "Eimai Image " + tt, Toast.LENGTH_SHORT).show();
-
-                    //  array[i++] = imageFile.getName();
-                    tt = imageFile.getName();
-
-                    int len = tt.length();
-
-                    String ss = tt.substring(0, (len - 4));
-                    vecc.add(ss);
-
-                    sz++;
-                } else if (imageFile.isDirectory()){
-                    imageFile.delete();
-                    Toast.makeText(getBaseContext(), "EImai Dir " + tt, Toast.LENGTH_SHORT).show();
-
-                    break;
-                }
-            }
-        }
-
-
-       if(vecc == null) {
-
-           AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
-
-           // set the message to display
-           alertbox.setMessage("Nuk jane shtuar kontrolle per diten e sotme.");
-           alertbox.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-               public void onClick(DialogInterface dialog, int id) {
-
-                   //   Class ourClass = Class.forName("com.birdorg.anpr.sdk.simple.camera.example.ANPRInfo");
-                   Intent ourIntent = new Intent(KontrolletSotme.this, AnprSdkMenu.class);
-
-                   startActivity(ourIntent);
-               }
-           });
-           alertbox.show();
-       }
-        setListAdapter(new KontrollArrayAdapter(this, vecc ));
 
     }
     @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
+    protected void onResume() {
+        // TODO Auto-generated method stub
+        super.onResume();
+        // loading the comments via AsyncTask
+        new LoadComments().execute();
+    }
 
-        super.onListItemClick(l, v, position, id);
-        String cheese = vecc.get(position);
+    public void updateJSONdata() {
+        mPlatesList = new ArrayList<HashMap<String, String>>();
+        JSONParser jParser = new JSONParser();
 
-
-      //  String item = ((TextView)v.findViewById(R.id.plate_name)).getText().toString();
-
-        Toast.makeText(getBaseContext(), "Cheese: "+cheese, Toast.LENGTH_SHORT).show();
+        JSONObject json = jParser.getJSONFromUrl(TARGA_KONTROLLET_SOTME_URL);
+        item  = new ItemKontrollo();
         try {
-            Class ourClass = Class.forName("com.birdorg.anpr.sdk.simple.camera.example.Info");
-            Intent intent = new Intent(KontrolletSotme.this, Info.class);
+            mPlates = json.getJSONArray(TAG_POSTS);
 
-            intent.putExtra("Plate", cheese);
-            intent.putExtra("Color", "");
-            intent.putExtra("Type", "");
-            startActivity(intent);
-        }catch (ClassNotFoundException e) {
+            // looping through all posts according to the json object returned
+            for (int i = 0; i < mPlates.length(); i++) {
+                JSONObject c = mPlates.getJSONObject(i);
+
+                // gets the content of each tag
+                String targa = c.getString(TAG_TARGA);
+                String data = c.getString(TAG_DATA);
+                String pajisje_id = c.getString(TAG_PAJISJE_ID);
+                String user_id = c.getString(TAG_USER_ID);
+                String capture_image = c.getString(TAG_CAPTURE_ID);
+
+                item.setTarga(targa);
+                item.setData(data);
+                item.setUser(user_id);
+                item.setImgpath(capture_image);
+
+                VECITEM.add(item);
+                item = new ItemKontrollo();
+
+            }
+        } catch (JSONException e) {
             e.printStackTrace();
+        }
+    }
+    private void updateKontrollo() {
 
+        ListView list;
+
+        Set<String> unionSet = new HashSet<String>();
+        for (HashMap<String, String> hashMap : mPlatesList) {
+            for (String key : hashMap.keySet())
+                if (key.equals(TAG_TARGA))
+                    unionSet.add(hashMap.get(key));
         }
 
 
+        setListAdapter(new KontrolletSotmeAdapter(this, VECITEM));
     }
 
+    private Bitmap getBitmap(String url)
+    {
+
+        try {
+            Bitmap bitmap=null;
+            URL imageUrl = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection)imageUrl.openConnection();
+            conn.setDoInput(true);
+            conn.connect();
+            InputStream input = conn.getInputStream();
+            bitmap = BitmapFactory.decodeStream(input);
+
+             return bitmap;
+        } catch (Exception ex){
+            ex.printStackTrace();
+
+            return null;
+        }
+    }
+public class LoadComments extends AsyncTask<Void, Void, Boolean> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(KontrolletSotme.this);
+            pDialog.setMessage("Targat po ngarkohen...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+        @Override
+        protected Boolean doInBackground(Void... arg0) {
+            updateJSONdata();
+            return null;
+
+        }
+        @Override
+        protected void onPostExecute(Boolean result) {
+            super.onPostExecute(result);
+            pDialog.dismiss();
+
+            updateKontrollo();
+
+        }
+    }
 
 }
 
