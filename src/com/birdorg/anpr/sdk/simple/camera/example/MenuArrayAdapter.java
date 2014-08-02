@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Vector;
+
 /**
  * Created by gh on 7/21/2014.
  */
@@ -13,6 +16,7 @@ public class MenuArrayAdapter extends ArrayAdapter<String> {
     private final Context context;
     private final String[] values;
 
+    Vector some = new Vector();
     public MenuArrayAdapter(Context context, String[] values) {
         super(context, R.layout.list_menu, values);
         this.context = context;
