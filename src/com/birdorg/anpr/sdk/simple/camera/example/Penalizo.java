@@ -80,9 +80,11 @@ public class Penalizo extends Activity {
                     i.putExtra("Marka", getIntent().getExtras().getString("Marka"));
                     i.putExtra("Gjoba", String.valueOf(spinner1.getSelectedItem()));
                     i.putExtra("Shuma", checkbox1.getText().toString());
+                    i.putExtra("Gjoba2", "");
+                    i.putExtra("Shuma2", "");
+                    i.putExtra("Shuma3", "");
                     i.putExtra("Username", username);
                     startActivity(i);
-
                 }
                 if(checkbox2.isChecked())
                 {
@@ -91,6 +93,9 @@ public class Penalizo extends Activity {
                     i.putExtra("Marka", getIntent().getExtras().getString("Marka"));
                     i.putExtra("Gjoba", String.valueOf(spinner2.getSelectedItem()));
                     i.putExtra("Shuma", checkbox2.getText().toString());
+                    i.putExtra("Gjoba2", "");
+                    i.putExtra("Shuma2", "");
+                    i.putExtra("Shuma3", "");
                     i.putExtra("Username", username);
                     startActivity(i);
                 }
@@ -100,12 +105,15 @@ public class Penalizo extends Activity {
                     i.putExtra("Targa", getIntent().getExtras().getString("Targa"));
                     i.putExtra("Marka", getIntent().getExtras().getString("Marka"));
                     i.putExtra("Shuma", String.valueOf(spinner3.getSelectedItem()));
+                    i.putExtra("Gjoba2", "");
+                    i.putExtra("Gjoba", "");
+                    i.putExtra("Shuma2", "");
+                    i.putExtra("Shuma3", "");
                     i.putExtra("Username", username);
                     startActivity(i);
                 }
                 if(!checkbox1.isChecked()&&!checkbox2.isChecked()&&!checkbox3.isChecked())
                 {
-                    // set the message to display
                     alertbox.setMessage("Ju lutem perzgjidhni nje gjobe.");
                     alertbox.show();
                 }
@@ -118,6 +126,7 @@ public class Penalizo extends Activity {
                     i.putExtra("Gjoba2", String.valueOf(spinner2.getSelectedItem()));
                     i.putExtra("Shuma", checkbox1.getText().toString());
                     i.putExtra("Shuma2", checkbox2.getText().toString());
+                    i.putExtra("Shuma3", "");
                     i.putExtra("Username", username);
                     startActivity(i);
                 }
@@ -142,6 +151,8 @@ public class Penalizo extends Activity {
                     i.putExtra("Gjoba", String.valueOf(spinner2.getSelectedItem()));
                     i.putExtra("Shuma2", String.valueOf(spinner3.getSelectedItem()));
                     i.putExtra("Shuma", checkbox2.getText().toString());
+                    i.putExtra("Shuma3", "");
+                    i.putExtra("Gjoba2", "");
                     i.putExtra("Username", username);
                     startActivity(i);
                 }
@@ -153,6 +164,8 @@ public class Penalizo extends Activity {
                     i.putExtra("Gjoba", String.valueOf(spinner1.getSelectedItem()));
                     i.putExtra("Shuma2", String.valueOf(spinner3.getSelectedItem()));
                     i.putExtra("Shuma", checkbox1.getText().toString());
+                    i.putExtra("Gjoba2", "");
+                    i.putExtra("Shuma3", "");
                     i.putExtra("Username", username);
                     startActivity(i);
                 }

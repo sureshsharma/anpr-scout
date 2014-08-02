@@ -41,6 +41,7 @@ public class Printo extends Activity {
         txt_tipi.setText(""+getIntent().getExtras().getString("Marka"));
         txt_shkelja.setText("" + getIntent().getExtras().getString("Gjoba"));
         txt_shkelja2.setText("" + getIntent().getExtras().getString("Gjoba2"));
+
         txt_shkelja3.setText("" + getIntent().getExtras().getString("Shuma3"));
 
         txt_gjoba.setText(""+getIntent().getExtras().getString("Shuma"));
