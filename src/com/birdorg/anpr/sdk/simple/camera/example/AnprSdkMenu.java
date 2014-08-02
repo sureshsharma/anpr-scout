@@ -38,6 +38,7 @@ public class AnprSdkMenu extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        createDir();
         setListAdapter(new MenuArrayAdapter(this, MOBILE_OS));
 
 
