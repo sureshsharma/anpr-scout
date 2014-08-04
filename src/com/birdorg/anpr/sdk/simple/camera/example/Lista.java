@@ -38,6 +38,7 @@ public class Lista extends ListActivity {
     private static final String TAG_SIGURACION = "siguracion";
     private static final String TAG_PRONAR = "pronar";
     private static final String TAG_SGS = "sgs";
+    private static final String TAG_IMAZHI = "imazhi";
     ArrayAdapter<String> myAdapter;
     EditText inputSearch;
 
@@ -80,6 +81,7 @@ public class Lista extends ListActivity {
                 String siguracion = c.getString(TAG_SIGURACION);
                 String sgs = c.getString(TAG_SGS);
                 String pronar = c.getString(TAG_PRONAR);
+                String imazhi = c.getString(TAG_IMAZHI);
                 String po = "po";
                 String jo = "jo";
                 // creating new HashMap
@@ -96,6 +98,7 @@ public class Lista extends ListActivity {
                 }
                 map.put(TAG_PRONAR, pronar);
                 map.put(TAG_SGS, sgs);
+                map.put(TAG_IMAZHI, imazhi);
                 map.put(TAG_TARGA, targa);
                 // adding HashList to ArrayList
                 mPlatesList.add(map);
@@ -112,8 +115,8 @@ public class Lista extends ListActivity {
         ListView lv = getListView();
 
         ListAdapter adapter = new SimpleAdapter(this, mPlatesList,
-                R.layout.plates, new String[] { TAG_TARGA, TAG_NGJYRA, TAG_MARKA, TAG_SIGURACION, TAG_GJOBA, TAG_PRONAR, TAG_SGS },
-                new int[] { R.id.title, R.id.ngjyra, R.id.marka, R.id.siguracion, R.id.gjoba, R.id.pronar, R.id.sgs});
+                R.layout.plates, new String[] { TAG_TARGA, TAG_NGJYRA, TAG_MARKA, TAG_SIGURACION, TAG_GJOBA, TAG_PRONAR, TAG_SGS, TAG_IMAZHI },
+                new int[] { R.id.title, R.id.ngjyra, R.id.marka, R.id.siguracion, R.id.gjoba, R.id.pronar, R.id.sgs, R.id.imazhi});
         setListAdapter(adapter);
 
         lv.setOnItemClickListener(new OnItemClickListener() {
@@ -129,6 +132,7 @@ public class Lista extends ListActivity {
                 String gjoba = ((TextView)view.findViewById(R.id.gjoba)).getText().toString();
                 String sgs = ((TextView)view.findViewById(R.id.sgs)).getText().toString();
                 String pronar = ((TextView)view.findViewById(R.id.pronar)).getText().toString();
+                String imazhi = ((TextView)view.findViewById(R.id.imazhi)).getText().toString();
                 String username = getIntent().getExtras().getString("Username");
 
                 Intent intent = new Intent(Lista.this,Info.class);
@@ -140,6 +144,7 @@ public class Lista extends ListActivity {
                 intent.putExtra("Sgs",sgs);
                 intent.putExtra("Pronar",pronar);
                 intent.putExtra("Username",username);
+                intent.putExtra("FotoPath",imazhi);
                 startActivity(intent);
             }
         });
