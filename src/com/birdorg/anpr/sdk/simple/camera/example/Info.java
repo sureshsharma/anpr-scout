@@ -20,6 +20,9 @@ import android.widget.Toast;
 
 
 import java.io.File;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -30,17 +33,7 @@ import it.sauronsoftware.ftp4j.FTPClient;
 public class Info extends Activity {
     ImageView imageView2;
     ImageView imageView3;
-
-    /*********  work only for Dedicated IP ***********/
-    static final String FTP_HOST= "comport.first.al";
-
-    /*********  FTP USERNAME ***********/
-    static final String FTP_USER = "androidfirst";
-
-    /*********  FTP PASSWORD ***********/
-    static final String FTP_PASS  ="MNXjqJET";
-
-
+    String path;
 
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -57,6 +50,7 @@ public class Info extends Activity {
         TextView tv7 = (TextView) findViewById(R.id.intent7);
         TextView tv8 = (TextView) findViewById(R.id.intent8);
         TextView tv9 = (TextView) findViewById(R.id.intent9);
+        TextView tv10 = (TextView) findViewById(R.id.intent10);
 
         Button btnValidate = (Button)findViewById(R.id.button);
         Button lista = (Button)findViewById(R.id.button2);
@@ -70,12 +64,27 @@ public class Info extends Activity {
         tv7.setText("Siguracion: "+getIntent().getExtras().getString("Siguracion"));
         tv8.setText("Sgs: "+getIntent().getExtras().getString("Sgs"));
         tv9.setText("Pronar: "+getIntent().getExtras().getString("Pronar"));
+        tv10.setText(""+getIntent().getExtras().getString("FotoPath"));
 
         if(getIntent().getExtras().getString("Gjoba").equals("jo")) {
             imageView3.setImageResource(R.drawable.status2);
         }else if(getIntent().getExtras().getString("Gjoba").equals("po"))
         {
             imageView3.setImageResource(R.drawable.status1);
+        }else
+            imageView3.setImageResource(R.drawable.status1);
+
+
+        path = tv10.getText().toString();
+        Bitmap bitmap = getBitmap(path);
+
+
+
+        if (bitmap != null) {
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView2);
+            imageView.setImageBitmap(bitmap);
+
         }
         btnValidate.setOnClickListener(new View.OnClickListener()
         {
@@ -89,6 +98,7 @@ public class Info extends Activity {
                 intent.putExtra("Targa", plate.getText().toString());
                 intent.putExtra("Ngjyra", ngjyra.getText().toString());
                 intent.putExtra("Marka", marka.getText().toString());
+                intent.putExtra("FotoPath", path);
                 intent.putExtra("Username", getIntent().getExtras().getString("Username"));
                 startActivity(intent);
 
@@ -113,53 +123,23 @@ public class Info extends Activity {
         });
     }
 
-    public void uploadFile(File fileName, String name){
-
-
-        FTPClient client = new FTPClient();
+    private Bitmap getBitmap(String url)
+    {
 
         try {
+            Bitmap bitmap=null;
+            URL imageUrl = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection)imageUrl.openConnection();
+            conn.setDoInput(true);
+            conn.connect();
+            InputStream input = conn.getInputStream();
+            bitmap = BitmapFactory.decodeStream(input);
 
-            client.connect(FTP_HOST,21);
-            client.login(FTP_USER, FTP_PASS);
-            client.setType(FTPClient.TYPE_BINARY);
+            return bitmap;
+        } catch (Exception ex){
+            ex.printStackTrace();
 
-            //  client.changeDirectory("/mdoklea/");
-
-
-            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-            //get current date time with Date()
-            Date date = new Date();
-
-            //  client.createDirectory(dateFormat.format(date));
-            Format formatter = new SimpleDateFormat("HH.mm.ss");
-            String time = formatter.format(new Date());
-
-            client.changeDirectory("/comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/");
-            client.createDirectory(time+name+"/");
-            client.changeDirectory("/comport.first.al/anpr/uploads/"+dateFormat.format(date)+"/"+time+name+"/");
-
-            client.upload(fileName);
-
-
-           /* Format formatter = new SimpleDateFormat("HH.mm.ss");
-            String time = formatter.format(new Date());
-
-            String name1 = fileName.getName();
-
-            File fn = new File(time+name);
-            fileName.renameTo(fn);
-             client.upload(fn);*/
-            // client.upload(f2);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                client.disconnect(true);
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
+            return null;
         }
-
     }
 }
