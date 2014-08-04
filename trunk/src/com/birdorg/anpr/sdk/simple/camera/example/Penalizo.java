@@ -55,10 +55,13 @@ public class Penalizo extends Activity {
         TextView tv3 = (TextView) findViewById(R.id.intent3);
         TextView tv4 = (TextView) findViewById(R.id.intent4);
         TextView tv5 = (TextView) findViewById(R.id.intent5);
+        TextView tv6 = (TextView) findViewById(R.id.pathfoto);
 
         tv3.setText("" + getIntent().getExtras().getString("Targa"));
         tv4.setText("" + getIntent().getExtras().getString("Ngjyra"));
         tv5.setText("" + getIntent().getExtras().getString("Marka"));
+        tv6.setText(""+getIntent().getExtras().getString("FotoPath"));
+        String path = tv6.getText().toString();
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         spinner1.setOnItemSelectedListener(new SelectingItem());
