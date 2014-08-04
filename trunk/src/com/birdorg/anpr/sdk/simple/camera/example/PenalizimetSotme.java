@@ -39,6 +39,7 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -82,13 +83,19 @@ public class PenalizimetSotme extends ListActivity{
 
     ItemKontrollo item;
     private Vector<ItemKontrollo> VECITEM = new Vector<ItemKontrollo>();
+    private Vector<ItemKontrollo> VECITEM2 = new Vector<ItemKontrollo>();
 
 
-    ImageView imageView ;
+    // gets the content of each tag
+    String gjoba;
+    String shuma;
 
+    String targa;
+    String data;
+    String pajisje_id;
+    String user_id;
+    String capture_image;
 
-    Vector<String> vec = new Vector<String>();
-    Vector<String> vecc= new Vector<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,14 +124,14 @@ public class PenalizimetSotme extends ListActivity{
                 JSONObject c = mPlates.getJSONObject(i);
 
                 // gets the content of each tag
-                String gjoba = c.getString(TAG_GJOBA);
-                String shuma = c.getString(TAG_SHUME);
+                gjoba = c.getString(TAG_GJOBA);
+                shuma = c.getString(TAG_SHUME);
 
-                String targa = c.getString(TAG_TARGA);
-                String data = c.getString(TAG_DATA);
-                String pajisje_id = c.getString(TAG_PAJISJE_ID);
-                String user_id = c.getString(TAG_USER_ID);
-                String capture_image = c.getString(TAG_CAPTURE_ID);
+                targa = c.getString(TAG_TARGA);
+                data = c.getString(TAG_DATA);
+                pajisje_id = c.getString(TAG_PAJISJE_ID);
+                user_id = c.getString(TAG_USER_ID);
+                capture_image = c.getString(TAG_CAPTURE_ID);
 
                 item.setGjoba(gjoba);
                 item.setShuma(shuma);
@@ -143,38 +150,131 @@ public class PenalizimetSotme extends ListActivity{
     }
     private void updateKontrollo() {
 
-        ListView list;
 
-        Set<String> unionSet = new HashSet<String>();
-        for (HashMap<String, String> hashMap : mPlatesList) {
-            for (String key : hashMap.keySet())
-                if (key.equals(TAG_TARGA))
-                    unionSet.add(hashMap.get(key));
+        int length = VECITEM.size();
+
+        Collections.reverse(VECITEM);
+        //Collections.copy(VECITEM2, VECITEM);
+
+        for(int index=0; index < 5; index++){
+            ItemKontrollo item = VECITEM.get(index);
+            VECITEM2.add(item);
+
+
         }
+        setListAdapter(new PenalizimetSotemAdapter(this, VECITEM2));
+        ListView goclick= getListView();
+
+        goclick.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
 
 
-        setListAdapter(new PenalizimetSotemAdapter(this, VECITEM));
+                ItemKontrollo item = VECITEM.get(position);
+                String plate = item.getTarga();
+                String platepath = item.getImgpath();
+                String gjobaplate = item.getGjoba();
+                String shumaplate = item.getShuma();
+
+                Intent intent = new Intent(PenalizimetSotme.this,Printo.class);
+                String ss = plate.substring(3, plate.length());
+                String sm = ss.substring(0, 1);
+
+                int some = Integer.parseInt(sm);
+
+                if (some == 1) {
+
+                    intent.putExtra("Ngjyra","Bardhe");
+                    intent.putExtra("Marka","Peageut");
+                    intent.putExtra("Pronar","Altin Gjokaj");
+
+
+                }else if (some == 2 ){
+
+                    intent.putExtra("Ngjyra","Kuqe");
+                    intent.putExtra("Marka","BMW");
+                    intent.putExtra("Pronar","Manushaqe Veli");
+
+
+
+                }else if (some == 3)
+                {
+                    intent.putExtra("Ngjyra","Zeze");
+                    intent.putExtra("Marka","Fiat");
+                    intent.putExtra("Pronar","Maria Mari");
+
+
+                }else if (some == 4)
+                {
+                    intent.putExtra("Ngjyra","Gri");
+                    intent.putExtra("Marka","Alfa Romeo");
+                    intent.putExtra("Pronar","Albert Beri");
+
+
+
+                }else if (some == 5)
+                {
+                    intent.putExtra("Ngjyra","Zeze");
+                    intent.putExtra("Marka","Suzuki");
+                    intent.putExtra("Pronar","Mario Shabani");
+
+
+                }else if (some == 6)
+                {
+                    intent.putExtra("Ngjyra","Blu");
+                    intent.putExtra("Marka","Subaru");
+
+                    intent.putExtra("Pronar","Elton Anori");
+
+
+
+                }else if (some == 7){
+
+                    intent.putExtra("Ngjyra","Gri");
+                    intent.putExtra("Marka","Ford");
+                    intent.putExtra("Pronar","Anxhela Katrin");
+
+                }
+                else if (some == 8) {
+
+                    intent.putExtra("Ngjyra", "Bardh");
+                    intent.putExtra("Marka", "Fiat");
+                    intent.putExtra("Pronar", "Qemal Rexhepaj");
+
+                }else if (some == 9){
+
+                    intent.putExtra("Ngjyra","Kuqe");
+                    intent.putExtra("Marka","Benz");
+                    intent.putExtra("Pronar","Vaso Balla");
+
+                }else{
+
+
+                    intent.putExtra("Ngjyra","Zez");
+                    intent.putExtra("Marka","Toyota");
+
+                    intent.putExtra("Pronar","Taulant Tano");
+
+
+                }
+                intent.putExtra("Targa",plate);
+                intent.putExtra("Gjoba",gjobaplate);
+                intent.putExtra("Shuma",shumaplate);
+                intent.putExtra("Gjoba2"," ");
+                intent.putExtra("Shuma2"," ");
+                intent.putExtra("Shuma3"," ");
+
+                intent.putExtra("FotoPath", platepath);
+                intent.putExtra("Username", getIntent().getExtras().getString("Username"));
+
+                startActivity(intent);
+            }
+        });
     }
 
-    private Bitmap getBitmap(String url)
-    {
 
-        try {
-            Bitmap bitmap=null;
-            URL imageUrl = new URL(url);
-            HttpURLConnection conn = (HttpURLConnection)imageUrl.openConnection();
-            conn.setDoInput(true);
-            conn.connect();
-            InputStream input = conn.getInputStream();
-            bitmap = BitmapFactory.decodeStream(input);
-
-            return bitmap;
-        } catch (Exception ex){
-            ex.printStackTrace();
-
-            return null;
-        }
-    }
     public class LoadComments extends AsyncTask<Void, Void, Boolean> {
 
         @Override
