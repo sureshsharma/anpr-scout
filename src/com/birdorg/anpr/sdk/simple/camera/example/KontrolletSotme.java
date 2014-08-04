@@ -152,7 +152,7 @@ public class KontrolletSotme extends ListActivity{
                                     int position, long id) {
 
 
-                ItemKontrollo item = VECITEM.get(position);
+                ItemKontrollo item = VECITEM2.get(position);
                 String plate = item.getTarga();
                 String platepath = item.getImgpath();
                 Intent intent = new Intent(KontrolletSotme.this,Info.class);
