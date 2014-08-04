@@ -252,8 +252,10 @@ public class Kontrollo extends Activity
 
                     //  Toast.makeText(context, "Username: "+user, Toast.LENGTH_LONG);
 
+                    String ss = s.substring(2,s.length());
+                    String sfin = "AA "+ss;
 
-                    targafin = s;
+                    targafin = sfin;
                     String name = pathsdk+s+".jpg";    // photo file on the SD card
                     File fs = new File(name);
                     uploadFile(fs, "-"+s);
@@ -261,15 +263,119 @@ public class Kontrollo extends Activity
 
                     new PostComment().execute();
 
+                    String sm = ss.substring(0, 1);
+
+
+                    int some = Integer.parseInt(sm);
                     Intent intent = new Intent(Kontrollo.this, Info.class);
 
-                    intent.putExtra("Targa",s);
-                    intent.putExtra("Ngjyra"," Ska Informacion");
-                    intent.putExtra("Marka"," Ska Informacion");
-                    intent.putExtra("Gjoba"," Ska Informacion");
-                    intent.putExtra("Siguracion"," Ska Informacion");
-                    intent.putExtra("Sgs"," Ska Informacion");
-                    intent.putExtra("Pronar"," Ska Informacion");
+                    if (some == 1) {
+
+                        intent.putExtra("Ngjyra","Bardhe");
+                        intent.putExtra("Marka","Peageut");
+                        intent.putExtra("Gjoba","jo");
+                        intent.putExtra("Siguracion","2014-06-11");
+                        intent.putExtra("Sgs","2014-08-01");
+                        intent.putExtra("Pronar","Altin Gjokaj");
+
+
+                    }else if (some == 2 ){
+
+                        intent.putExtra("Ngjyra","Kuqe");
+                        intent.putExtra("Marka","BMW");
+                        intent.putExtra("Gjoba","po");
+                        intent.putExtra("Siguracion","2014-09-30");
+                        intent.putExtra("Sgs","2014-10-01");
+                        intent.putExtra("Pronar","Manushaqe Veli");
+
+
+
+                    }else if (some == 3)
+                    {
+                        intent.putExtra("Ngjyra","Zeze");
+                        intent.putExtra("Marka","Fiat");
+                        intent.putExtra("Gjoba","jo");
+                        intent.putExtra("Siguracion","2014-11-01");
+                        intent.putExtra("Sgs","2014-10-30");
+                        intent.putExtra("Pronar","Maria Mari");
+
+
+                    }else if (some == 4)
+                    {
+                        intent.putExtra("Ngjyra","Gri");
+                        intent.putExtra("Marka","Alfa Romeo");
+                        intent.putExtra("Gjoba","po");
+                        intent.putExtra("Siguracion","2014-12-31");
+                        intent.putExtra("Sgs","2014-11-30");
+                        intent.putExtra("Pronar","Albert Beri");
+
+
+
+                    }else if (some == 5)
+                    {
+                        intent.putExtra("Ngjyra","Zeze");
+                        intent.putExtra("Marka","Suzuki");
+                        intent.putExtra("Gjoba","po");
+                        intent.putExtra("Siguracion","2014-11-01");
+                        intent.putExtra("Sgs","2014-10-30");
+                        intent.putExtra("Pronar","Mario Shabani");
+
+
+                    }else if (some == 6)
+                    {
+                        intent.putExtra("Ngjyra","Blu");
+                        intent.putExtra("Marka","Subaru");
+                        intent.putExtra("Gjoba","jo");
+                        intent.putExtra("Siguracion","2014-11-01");
+                        intent.putExtra("Sgs","2014-10-30");
+                        intent.putExtra("Pronar","Elton Anori");
+
+
+
+                    }else if (some == 7){
+
+                        intent.putExtra("Ngjyra","Gri");
+                        intent.putExtra("Marka","Ford");
+                        intent.putExtra("Gjoba","po");
+                        intent.putExtra("Siguracion","2014-11-01");
+                        intent.putExtra("Sgs","2014-10-30");
+                        intent.putExtra("Pronar","Anxhela Katrin");
+
+                    }
+                    else if (some == 8) {
+
+                        intent.putExtra("Ngjyra", "Bardh");
+                        intent.putExtra("Marka", "Fiat");
+                        intent.putExtra("Gjoba", "jo");
+                        intent.putExtra("Siguracion", "2014-09-01");
+                        intent.putExtra("Sgs", "2014-08-30");
+                        intent.putExtra("Pronar", "Qemal Rexhepaj");
+
+                    }else if (some == 9){
+
+                            intent.putExtra("Ngjyra","Kuqe");
+                            intent.putExtra("Marka","Benz");
+                            intent.putExtra("Gjoba","po");
+                            intent.putExtra("Siguracion","2014-09-20");
+                            intent.putExtra("Sgs","2014-08-10");
+                            intent.putExtra("Pronar","Vaso Balla");
+
+                     }else
+                    {
+
+
+                        intent.putExtra("Ngjyra","Zez");
+                        intent.putExtra("Marka","Toyota");
+                        intent.putExtra("Gjoba","jo");
+                        intent.putExtra("Siguracion","2014-11-01");
+                        intent.putExtra("Sgs","2014-11-30");
+                        intent.putExtra("Pronar","Taulant Tano");
+
+
+                    }
+
+
+                    intent.putExtra("Targa",sfin);
                     intent.putExtra("FotoPath", CAP_PATH);
 
 
