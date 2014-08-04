@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
         android:paddingLeft="8dp"
+        android:visibility="gone"
         android:text="PATH" />
     <TextView
         android:text="The third Intent"
