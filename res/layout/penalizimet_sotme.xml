@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:padding="5dp"
+    android:id="@+id/blah">
+
+
+    <ImageView
+        android:id="@+id/label_capture_image"
+
+        android:layout_width="90px"
+        android:layout_height="90px"
+        android:layout_marginLeft="10px"
+        android:layout_marginTop="10px"
+
+        android:src="@drawable/cap" >
+
+    </ImageView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        >
+
+        <TextView
+            android:id="@+id/label_targa"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+
+            android:text="@+id/label"
+            android:textSize="30px" />
+        <TextView
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Data: "
+            android:id="@+id/label_data" />
+
+        <TextView
+
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+
+            android:text="Gjobat: "
+            android:textColor="#ff0000"
+            android:id="@+id/label_gjobat" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="87dp"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="10px"
+
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Shuma:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="(12345678)"
+            android:textColor="#ff75ff11"
+
+            android:id="@+id/label_shuma" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="87dp"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="10px"
+
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Rregjistruar"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="nga polici:" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="(12345678)"
+            android:textColor="#ff149cff"
+
+            android:id="@+id/label_user" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/label_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:paddingLeft="8dp"
+            android:visibility="gone"
+            />
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="10px"
+
+            android:src="@drawable/write" >
+        </ImageView>
+    </LinearLayout>
+
+</LinearLayout>
