@@ -74,11 +74,6 @@ public class KontrolletSotme extends ListActivity{
     private Vector<ItemKontrollo> VECITEM = new Vector<ItemKontrollo>();
 
 
-    ImageView imageView ;
-
-
-    Vector<String> vec = new Vector<String>();
-    Vector<String> vecc= new Vector<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +105,7 @@ public class KontrolletSotme extends ListActivity{
                 String targa = c.getString(TAG_TARGA);
                 String data = c.getString(TAG_DATA);
                 String pajisje_id = c.getString(TAG_PAJISJE_ID);
+
                 String user_id = c.getString(TAG_USER_ID);
                 String capture_image = c.getString(TAG_CAPTURE_ID);
 
@@ -141,25 +137,7 @@ public class KontrolletSotme extends ListActivity{
         setListAdapter(new KontrolletSotmeAdapter(this, VECITEM));
     }
 
-    private Bitmap getBitmap(String url)
-    {
 
-        try {
-            Bitmap bitmap=null;
-            URL imageUrl = new URL(url);
-            HttpURLConnection conn = (HttpURLConnection)imageUrl.openConnection();
-            conn.setDoInput(true);
-            conn.connect();
-            InputStream input = conn.getInputStream();
-            bitmap = BitmapFactory.decodeStream(input);
-
-             return bitmap;
-        } catch (Exception ex){
-            ex.printStackTrace();
-
-            return null;
-        }
-    }
 public class LoadComments extends AsyncTask<Void, Void, Boolean> {
 
         @Override
