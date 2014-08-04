@@ -172,7 +172,7 @@ public class PenalizimetSotme extends ListActivity{
                                     int position, long id) {
 
 
-                ItemKontrollo item = VECITEM.get(position);
+                ItemKontrollo item = VECITEM2.get(position);
                 String plate = item.getTarga();
                 String platepath = item.getImgpath();
                 String gjobaplate = item.getGjoba();
