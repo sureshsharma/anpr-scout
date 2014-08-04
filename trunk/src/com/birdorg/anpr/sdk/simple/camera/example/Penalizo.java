@@ -204,6 +204,10 @@ public class Penalizo extends Activity {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String formattedDate = df.format(c.getTime());
             String username = getIntent().getExtras().getString("Username");
+
+            TextView tv6 = (TextView) findViewById(R.id.pathfoto);
+            tv6.setText(""+getIntent().getExtras().getString("FotoPath"));
+            String path = tv6.getText().toString();
             //We need to change this:
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(Penalizo.this);
 
@@ -214,6 +218,7 @@ public class Penalizo extends Activity {
                 params.add(new BasicNameValuePair("pajisje_id", pajisje_id));
                 params.add(new BasicNameValuePair("data", formattedDate));
                 params.add(new BasicNameValuePair("targa", targa));
+                params.add(new BasicNameValuePair("imazhi", path));
                 if(checkbox1.isChecked()) {
                     params.add(new BasicNameValuePair("gjoba1", String.valueOf(spinner1.getSelectedItem())));
                     params.add(new BasicNameValuePair("shuma1", checkbox1.getText().toString()));
