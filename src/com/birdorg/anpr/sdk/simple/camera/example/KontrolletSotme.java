@@ -39,6 +39,7 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -64,6 +65,8 @@ public class KontrolletSotme extends ListActivity{
     private static final String TAG_TARGA= "targa";
     private static final String TAG_POSTS = "posts";
 
+    String ftarga;
+    String fpath;
 
     private JSONArray mPlates = null;
 
@@ -72,6 +75,7 @@ public class KontrolletSotme extends ListActivity{
 
     ItemKontrollo item;
     private Vector<ItemKontrollo> VECITEM = new Vector<ItemKontrollo>();
+    private Vector<ItemKontrollo> VECITEM2 = new Vector<ItemKontrollo>();
 
 
 
@@ -103,11 +107,13 @@ public class KontrolletSotme extends ListActivity{
 
                 // gets the content of each tag
                 String targa = c.getString(TAG_TARGA);
+                ftarga = targa;
                 String data = c.getString(TAG_DATA);
                 String pajisje_id = c.getString(TAG_PAJISJE_ID);
 
                 String user_id = c.getString(TAG_USER_ID);
                 String capture_image = c.getString(TAG_CAPTURE_ID);
+                fpath  = capture_image;
 
                 item.setTarga(targa);
                 item.setData(data);
@@ -124,19 +130,149 @@ public class KontrolletSotme extends ListActivity{
     }
     private void updateKontrollo() {
 
-        ListView list;
+        int length = VECITEM.size();
 
-        Set<String> unionSet = new HashSet<String>();
-        for (HashMap<String, String> hashMap : mPlatesList) {
-            for (String key : hashMap.keySet())
-                if (key.equals(TAG_TARGA))
-                    unionSet.add(hashMap.get(key));
+        Collections.reverse(VECITEM);
+        //Collections.copy(VECITEM2, VECITEM);
+
+        for(int index=0; index < 5; index++){
+            ItemKontrollo item = VECITEM.get(index);
+            VECITEM2.add(item);
+
+
         }
+        setListAdapter(new KontrolletSotmeAdapter(this, VECITEM2));
+
+        ListView goclick= getListView();
+
+        goclick.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
 
 
-        setListAdapter(new KontrolletSotmeAdapter(this, VECITEM));
+                ItemKontrollo item = VECITEM.get(position);
+                String plate = item.getTarga();
+                String platepath = item.getImgpath();
+                Intent intent = new Intent(KontrolletSotme.this,Info.class);
+                String ss = plate.substring(3, plate.length());
+                String sm = ss.substring(0, 1);
+
+                int some = Integer.parseInt(sm);
+
+                if (some == 1) {
+
+                    intent.putExtra("Ngjyra","Bardhe");
+                    intent.putExtra("Marka","Peageut");
+                    intent.putExtra("Gjoba","jo");
+                    intent.putExtra("Siguracion","2014-06-11");
+                    intent.putExtra("Sgs","2014-08-01");
+                    intent.putExtra("Pronar","Altin Gjokaj");
+
+
+                }else if (some == 2 ){
+
+                    intent.putExtra("Ngjyra","Kuqe");
+                    intent.putExtra("Marka","BMW");
+                    intent.putExtra("Gjoba","po");
+                    intent.putExtra("Siguracion","2014-09-30");
+                    intent.putExtra("Sgs","2014-10-01");
+                    intent.putExtra("Pronar","Manushaqe Veli");
+
+
+
+                }else if (some == 3)
+                {
+                    intent.putExtra("Ngjyra","Zeze");
+                    intent.putExtra("Marka","Fiat");
+                    intent.putExtra("Gjoba","jo");
+                    intent.putExtra("Siguracion","2014-11-01");
+                    intent.putExtra("Sgs","2014-10-30");
+                    intent.putExtra("Pronar","Maria Mari");
+
+
+                }else if (some == 4)
+                {
+                    intent.putExtra("Ngjyra","Gri");
+                    intent.putExtra("Marka","Alfa Romeo");
+                    intent.putExtra("Gjoba","po");
+                    intent.putExtra("Siguracion","2014-12-31");
+                    intent.putExtra("Sgs","2014-11-30");
+                    intent.putExtra("Pronar","Albert Beri");
+
+
+
+                }else if (some == 5)
+                {
+                    intent.putExtra("Ngjyra","Zeze");
+                    intent.putExtra("Marka","Suzuki");
+                    intent.putExtra("Gjoba","po");
+                    intent.putExtra("Siguracion","2014-11-01");
+                    intent.putExtra("Sgs","2014-10-30");
+                    intent.putExtra("Pronar","Mario Shabani");
+
+
+                }else if (some == 6)
+                {
+                    intent.putExtra("Ngjyra","Blu");
+                    intent.putExtra("Marka","Subaru");
+                    intent.putExtra("Gjoba","jo");
+                    intent.putExtra("Siguracion","2014-11-01");
+                    intent.putExtra("Sgs","2014-10-30");
+                    intent.putExtra("Pronar","Elton Anori");
+
+
+
+                }else if (some == 7){
+
+                    intent.putExtra("Ngjyra","Gri");
+                    intent.putExtra("Marka","Ford");
+                    intent.putExtra("Gjoba","po");
+                    intent.putExtra("Siguracion","2014-11-01");
+                    intent.putExtra("Sgs","2014-10-30");
+                    intent.putExtra("Pronar","Anxhela Katrin");
+
+                }
+                else if (some == 8) {
+
+                    intent.putExtra("Ngjyra", "Bardh");
+                    intent.putExtra("Marka", "Fiat");
+                    intent.putExtra("Gjoba", "jo");
+                    intent.putExtra("Siguracion", "2014-09-01");
+                    intent.putExtra("Sgs", "2014-08-30");
+                    intent.putExtra("Pronar", "Qemal Rexhepaj");
+
+                }else if (some == 9){
+
+                    intent.putExtra("Ngjyra","Kuqe");
+                    intent.putExtra("Marka","Benz");
+                    intent.putExtra("Gjoba","po");
+                    intent.putExtra("Siguracion","2014-09-20");
+                    intent.putExtra("Sgs","2014-08-10");
+                    intent.putExtra("Pronar","Vaso Balla");
+
+                }else{
+
+
+                    intent.putExtra("Ngjyra","Zez");
+                    intent.putExtra("Marka","Toyota");
+                    intent.putExtra("Gjoba","jo");
+                    intent.putExtra("Siguracion","2014-11-01");
+                    intent.putExtra("Sgs","2014-11-30");
+                    intent.putExtra("Pronar","Taulant Tano");
+
+
+                }
+                intent.putExtra("Targa",plate);
+                intent.putExtra("FotoPath", platepath);
+                intent.putExtra("Username", getIntent().getExtras().getString("Username"));
+
+                startActivity(intent);
+            }
+        });
+
     }
-
 
 public class LoadComments extends AsyncTask<Void, Void, Boolean> {
 
