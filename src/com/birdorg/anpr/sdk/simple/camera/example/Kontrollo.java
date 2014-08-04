@@ -262,7 +262,17 @@ public class Kontrollo extends Activity
                     new PostComment().execute();
 
                     Intent intent = new Intent(Kontrollo.this, Info.class);
-                    intent.putExtra("Targa", s);
+
+                    intent.putExtra("Targa",s);
+                    intent.putExtra("Ngjyra"," Ska Informacion");
+                    intent.putExtra("Marka"," Ska Informacion");
+                    intent.putExtra("Gjoba"," Ska Informacion");
+                    intent.putExtra("Siguracion"," Ska Informacion");
+                    intent.putExtra("Sgs"," Ska Informacion");
+                    intent.putExtra("Pronar"," Ska Informacion");
+                    intent.putExtra("FotoPath", CAP_PATH);
+
+
                     startActivity(intent);
 
 
