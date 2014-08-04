@@ -50,7 +50,7 @@ public class Info extends Activity {
         TextView tv7 = (TextView) findViewById(R.id.intent7);
         TextView tv8 = (TextView) findViewById(R.id.intent8);
         TextView tv9 = (TextView) findViewById(R.id.intent9);
-        TextView tv10 = (TextView) findViewById(R.id.intent10);
+        TextView tv11 = (TextView) findViewById(R.id.intent11);
 
         Button btnValidate = (Button)findViewById(R.id.button);
         Button lista = (Button)findViewById(R.id.button2);
@@ -64,7 +64,7 @@ public class Info extends Activity {
         tv7.setText("Siguracion: "+getIntent().getExtras().getString("Siguracion"));
         tv8.setText("Sgs: "+getIntent().getExtras().getString("Sgs"));
         tv9.setText("Pronar: "+getIntent().getExtras().getString("Pronar"));
-        tv10.setText(""+getIntent().getExtras().getString("FotoPath"));
+        tv11.setText(""+getIntent().getExtras().getString("FotoPath"));
 
         if(getIntent().getExtras().getString("Gjoba").equals("jo")) {
             imageView3.setImageResource(R.drawable.status2);
@@ -75,7 +75,7 @@ public class Info extends Activity {
             imageView3.setImageResource(R.drawable.status1);
 
 
-        path = tv10.getText().toString();
+        path = tv11.getText().toString();
         Bitmap bitmap = getBitmap(path);
 
 
