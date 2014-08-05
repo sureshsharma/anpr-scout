@@ -74,11 +74,8 @@ public class Info extends Activity {
         }else
             imageView3.setImageResource(R.drawable.status1);
 
-
         path = tv11.getText().toString();
         Bitmap bitmap = getBitmap(path);
-
-
 
         if (bitmap != null) {
 
@@ -122,10 +119,8 @@ public class Info extends Activity {
             }
         });
     }
-
     private Bitmap getBitmap(String url)
     {
-
         try {
             Bitmap bitmap=null;
             URL imageUrl = new URL(url);
