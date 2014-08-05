@@ -30,7 +30,7 @@ public class Lista extends ListActivity {
     private static final String TARGA_URL = "http://www.comport.first.al/anpr/lista.php";
 
     private static final String TAG_NGJYRA = "ngjyra";
-    private static final String TAG_TARGA= "targa";
+    private static final String TAG_TARGA = "targa";
     private static final String TAG_POSTS = "posts";
     private static final String TAG_GJOBA = "gjoba";
     private static final String TAG_GJOBA_STATUS = "gjoba_status";
@@ -90,16 +90,15 @@ public class Lista extends ListActivity {
                 map.put(TAG_NGJYRA, ngjyra);
                 map.put(TAG_MARKA, marka);
                 map.put(TAG_SIGURACION, siguracion);
-                if(gjoba_status.equals("1")) {
+                if (gjoba_status.equals("1")) {
                     map.put(TAG_GJOBA, po);
-                }
-                else if((gjoba_status == null) || (gjoba_status.equals("0"))){
+                } else if ((gjoba_status == null) || (gjoba_status.equals("0"))) {
                     map.put(TAG_GJOBA, jo);
                 }
                 map.put(TAG_PRONAR, pronar);
                 map.put(TAG_SGS, sgs);
                 map.put(TAG_IMAZHI, imazhi);
-                map.put(TAG_TARGA, targa);
+                map.put(TAG_TARGA, targa.replace(" ", ""));
                 // adding HashList to ArrayList
                 mPlatesList.add(map);
             }
@@ -111,12 +110,17 @@ public class Lista extends ListActivity {
     /**
      * Inserts the parsed data into the listview.
      */
+    ListAdapter adapter;
+
     private void updateList() {
         ListView lv = getListView();
 
-        ListAdapter adapter = new SimpleAdapter(this, mPlatesList,
-                R.layout.plates, new String[] { TAG_TARGA, TAG_NGJYRA, TAG_MARKA, TAG_SIGURACION, TAG_GJOBA, TAG_PRONAR, TAG_SGS, TAG_IMAZHI },
-                new int[] { R.id.title, R.id.ngjyra, R.id.marka, R.id.siguracion, R.id.gjoba, R.id.pronar, R.id.sgs, R.id.imazhi});
+        adapter = new SimpleAdapter(this, mPlatesList, R.layout.plates,
+                new String[] { TAG_TARGA, TAG_NGJYRA, TAG_MARKA,
+                        TAG_SIGURACION, TAG_GJOBA, TAG_PRONAR, TAG_SGS,
+                        TAG_IMAZHI }, new int[] { R.id.title, R.id.ngjyra,
+                R.id.marka, R.id.siguracion, R.id.gjoba, R.id.pronar,
+                R.id.sgs, R.id.imazhi });
         setListAdapter(adapter);
 
         lv.setOnItemClickListener(new OnItemClickListener() {
@@ -125,61 +129,82 @@ public class Lista extends ListActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-                String targa = ((TextView)view.findViewById(R.id.title)).getText().toString();
-                String ngjyra = ((TextView)view.findViewById(R.id.ngjyra)).getText().toString();
-                String marka = ((TextView)view.findViewById(R.id.marka)).getText().toString();
-                String siguracion = ((TextView)view.findViewById(R.id.siguracion)).getText().toString();
-                String gjoba = ((TextView)view.findViewById(R.id.gjoba)).getText().toString();
-                String sgs = ((TextView)view.findViewById(R.id.sgs)).getText().toString();
-                String pronar = ((TextView)view.findViewById(R.id.pronar)).getText().toString();
-                String imazhi = ((TextView)view.findViewById(R.id.imazhi)).getText().toString();
+                String targa = ((TextView) view.findViewById(R.id.title))
+                        .getText().toString();
+                String ngjyra = ((TextView) view.findViewById(R.id.ngjyra))
+                        .getText().toString();
+                String marka = ((TextView) view.findViewById(R.id.marka))
+                        .getText().toString();
+                String siguracion = ((TextView) view
+                        .findViewById(R.id.siguracion)).getText().toString();
+                String gjoba = ((TextView) view.findViewById(R.id.gjoba))
+                        .getText().toString();
+                String sgs = ((TextView) view.findViewById(R.id.sgs)).getText()
+                        .toString();
+                String pronar = ((TextView) view.findViewById(R.id.pronar))
+                        .getText().toString();
+                String imazhi = ((TextView) view.findViewById(R.id.imazhi))
+                        .getText().toString();
                 String username = getIntent().getExtras().getString("Username");
 
-                Intent intent = new Intent(Lista.this,Info.class);
-                intent.putExtra("Targa",targa);
-                intent.putExtra("Ngjyra",ngjyra);
-                intent.putExtra("Marka",marka);
-                intent.putExtra("Gjoba",gjoba);
-                intent.putExtra("Siguracion",siguracion);
-                intent.putExtra("Sgs",sgs);
-                intent.putExtra("Pronar",pronar);
-                intent.putExtra("Username",username);
-                intent.putExtra("FotoPath",imazhi);
+                Intent intent = new Intent(Lista.this, Info.class);
+                intent.putExtra("Targa", targa);
+                intent.putExtra("Ngjyra", ngjyra);
+                intent.putExtra("Marka", marka);
+                intent.putExtra("Gjoba", gjoba);
+                intent.putExtra("Siguracion", siguracion);
+                intent.putExtra("Sgs", sgs);
+                intent.putExtra("Pronar", pronar);
+                intent.putExtra("Username", username);
+                intent.putExtra("FotoPath", imazhi);
                 startActivity(intent);
             }
         });
     }
-    public void search(){
+
+    public void search() {
         ListView lv = getListView();
         Set<String> unionSet = new HashSet<String>();
-        for (HashMap<String, String> hashMap : mPlatesList) {
-            for(String key : hashMap.keySet())
-                if(key.equals(TAG_TARGA))
+        ArrayList<HashMap<String, String>> mPlateClone = new ArrayList<HashMap<String, String>>(
+                mPlatesList);
+        for (HashMap<String, String> hashMap : mPlateClone) {
+            for (String key : hashMap.keySet())
+                if (key.equals(TAG_TARGA))
                     unionSet.add(hashMap.get(key));
         }
 
         String[] table = unionSet.toArray(new String[unionSet.size()]);
-        inputSearch = (EditText) findViewById (R.id.searchText);
-        myAdapter = new ArrayAdapter<String>(this, R.layout.plates, R.id.title, table);
-        lv.setAdapter(myAdapter);
+        inputSearch = (EditText) findViewById(R.id.searchText);
+        // myAdapter = new ArrayAdapter<String>(this, R.layout.plates,
+        // R.id.title,
+        // table);
+        // lv.setAdapter(myAdapter);
 
         inputSearch.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-                Lista.this.myAdapter.getFilter().filter(cs);
+            public void onTextChanged(CharSequence cs, int arg1, int arg2,
+                                      int arg3) {
+
             }
+
             @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                          int arg3) {
+            public void beforeTextChanged(CharSequence arg0, int arg1,
+                                          int arg2, int arg3) {
             }
+
             @Override
-            public void afterTextChanged(Editable arg0) {
+            public void afterTextChanged(Editable s) {
+                // // ((SimpleAdapter)
+                // //
+                // adapter).getFilter().filter(inputSearch.getText().toString().trim());
+                ((SimpleAdapter) Lista.this.adapter).getFilter().filter(
+                        inputSearch.getText().toString().trim());
+
             }
         });
     }
 
     public class LoadLista extends AsyncTask<Void, Void, Boolean> {
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -189,18 +214,20 @@ public class Lista extends ListActivity {
             pDialog.setCancelable(true);
             pDialog.show();
         }
+
         @Override
         protected Boolean doInBackground(Void... arg0) {
             updateJSONdata();
-           // search();
             return null;
 
         }
+
         @Override
         protected void onPostExecute(Boolean result) {
             super.onPostExecute(result);
             pDialog.dismiss();
             updateList();
+            search();
         }
     }
 }

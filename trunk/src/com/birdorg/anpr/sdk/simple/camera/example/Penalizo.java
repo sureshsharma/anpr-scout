@@ -282,9 +282,7 @@ public class Penalizo extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             return null;
-
         }
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once product deleted
